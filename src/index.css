@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background-color: #f4f4f4;
+  color: #213547;
+}
+
+.receipt-paper {
+  background: #fff;
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.03) 1px, 
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.03) 1px, 
+      transparent 1px
+    );
+  background-size: 3px 3px;
+  box-shadow: 
+    0 0 10px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.receipt-paper::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 1;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 27px,
+      rgba(0, 0, 0, 0.1) 28px
+    );
+}
+
+.receipt-paper > * {
+  position: relative;
+  z-index: 2;
+}
+
+.dot-matrix {
+  font-family: 'Courier New', monospace;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.receipt-tear {
+  position: relative;
+}
+
+.receipt-tear::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 8px;
+  background-image: 
+    linear-gradient(
+      45deg,
+      transparent 33.333%,
+      #f4f4f4 33.333%,
+      #f4f4f4 66.667%,
+      transparent 66.667%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 33.333%,
+      #f4f4f4 33.333%,
+      #f4f4f4 66.667%,
+      transparent 66.667%
+    );
+  background-size: 16px 32px;
+  background-position: 0 -16px;
+}
